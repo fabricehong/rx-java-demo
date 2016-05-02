@@ -11,14 +11,21 @@ import rx.liip.ch.rxdemo.Updatable;
 
 public class ModelUpdateScenario extends Scenario {
 
+    private Item viewState;
+    private Item modelState;
+
+    protected void init() {
+        clear();
+        viewState = new Item(activity);
+        modelState = new Item(activity);
+        addRow("View", viewState);
+        addRow("Model", modelState);
+    }
+
     @Override
     public void run() {
-        clear();
 
-        final Item viewState = new Item(activity);
-        final Item modelState = new Item(activity);
-        setViewItems(viewState);
-        setCurrentModelItemRow(modelState);
+        init();
 
         //calls
 

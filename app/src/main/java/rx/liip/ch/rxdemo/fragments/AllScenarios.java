@@ -16,32 +16,39 @@ import rx.liip.ch.rxdemo.Updatable;
 
 public class AllScenarios extends Scenario {
 
-    @Override
-    public void run() {
-        clear();
+    private Item viewState;
+    private Item modelState;
+    private Item userState;
+    private Item[] friends;
+    private Item[] addresses;
 
-        final Item viewState = new Item(activity);
-        final Item modelState = new Item(activity);
-        final Item userState = new Item(activity);
-        final Item[] friends = new ArrayList<Item>() {{
+    protected void init() {
+        clear();
+        viewState = new Item(activity);
+        modelState = new Item(activity);
+        userState = new Item(activity);
+        friends = new ArrayList<Item>() {{
             for (int i = 0; i < 10; i++) {
                 add(new Item(activity));
             }
         }}.toArray(new Item[10]);
-        final Item[] addresses = new ArrayList<Item>() {{
+        addresses = new ArrayList<Item>() {{
             for (int i = 0; i < 4; i++) {
                 add(new Item(activity));
             }
         }}.toArray(new Item[4]);
 
-        setViewItems(viewState);
-        setCurrentModelItemRow(modelState);
-        addModelRow();
-        setCurrentModelItemRow(userState);
-        addModelRow();
-        setCurrentModelItemRow(friends);
-        addModelRow();
-        setCurrentModelItemRow(addresses);
+
+        addRow("View", viewState);
+        addRow("Model : model state", modelState);
+        addRow("Model : local user", userState);
+        addRow("Model : friends", friends);
+        addRow("Model : addresses", addresses);
+    }
+
+    @Override
+    public void run() {
+        init();
 
         // calls
 

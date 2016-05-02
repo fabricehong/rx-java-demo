@@ -11,19 +11,25 @@ import rx.liip.ch.rxdemo.Updatable;
 
 public class ChainedCallsScenario extends Scenario {
 
-    @Override
-    public void run() {
+    private Item call1State;
+    private Item call2State;
+    private Item viewState;
+
+    protected void init() {
         clear();
 
-        final Item viewState = new Item(activity);
+        viewState = new Item(activity);
+        call1State = new Item(activity);
+        call2State = new Item(activity);
+        addRow("View", viewState);
+        addRow("Model : call 1", call1State);
+        addRow("Model : call 2", call2State);
+    }
 
-        final Item call1State = new Item(activity);
-        final Item call2State = new Item(activity);
+    @Override
+    public void run() {
 
-        setViewItems(viewState);
-        setCurrentModelItemRow(call1State);
-        addModelRow();
-        setCurrentModelItemRow(call2State);
+        init();
 
         // calls
 

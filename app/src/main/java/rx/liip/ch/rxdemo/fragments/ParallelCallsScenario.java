@@ -2,7 +2,6 @@ package rx.liip.ch.rxdemo.fragments;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 import rx.Observable;
 import rx.Subscriber;
@@ -15,21 +14,25 @@ import rx.liip.ch.rxdemo.Updatable;
 
 public class ParallelCallsScenario extends Scenario {
 
-    private Random rand = new Random();
+    private Item[] friends;
+    private Item loaded;
+
+    protected void init() {
+        clear();
+        friends = new ArrayList<Item>() {{
+            for (int i = 0; i < 7; i++) {
+                add(new Item(activity));
+            }
+        }}.toArray(new Item[7]);
+
+        loaded = new Item(activity);
+        addRow("View", loaded);
+        addRow("Model", friends);
+    }
 
     @Override
     public void run() {
-        clear();
-
-        Item[] friends = new ArrayList<Item>() {{
-            for (int i = 0; i < 10; i++) {
-                add(new Item(activity));
-            }
-        }}.toArray(new Item[10]);
-
-        final Item loaded = new Item(activity);
-        setViewItems(loaded);
-        setCurrentModelItemRow(friends);
+        init();
 
         // calls
 

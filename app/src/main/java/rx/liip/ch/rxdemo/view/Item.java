@@ -13,6 +13,7 @@ import rx.liip.ch.rxdemo.Updatable;
 public class Item extends LinearLayout implements Updatable {
 
     public static final int PADDING = 10;
+    public static final int SIZE = 80;
     private final Activity activity;
     private TextView labelView;
 
@@ -20,8 +21,8 @@ public class Item extends LinearLayout implements Updatable {
         super(activity);
         this.activity = activity;
         setBackgroundColor(ResourcesCompat.getColor(getResources(), R.color.deactivated, null));
-        //setPadding(PADDING, PADDING, PADDING, PADDING);
-        LayoutParams params = new LayoutParams(100, 100);
+        setPadding(PADDING, PADDING, PADDING, PADDING);
+        LayoutParams params = new LayoutParams(SIZE, SIZE);
         params.setMargins(PADDING, PADDING, PADDING, PADDING);
         setLayoutParams(params);
 

@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity
     }
 
     private void setScenario(Scenario scenario) {
-        scenario.setActivity(this);
+        scenario.init(this, getLayoutInflater());
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
         fragmentTransaction.replace(R.id.content, scenario);
         this.currentScenario = scenario;

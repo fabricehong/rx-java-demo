@@ -1,4 +1,4 @@
-package rx.liip.ch.rxdemo;
+package rx.liip.ch.rxdemo.view;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -11,6 +11,7 @@ import android.widget.LinearLayout;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import rx.liip.ch.rxdemo.R;
 
 public abstract class Scenario extends Fragment{
 

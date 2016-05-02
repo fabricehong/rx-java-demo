@@ -1,4 +1,4 @@
-package rx.liip.ch.rxdemo;
+package rx.liip.ch.rxdemo.view;
 
 import android.app.Activity;
 import android.support.v4.content.res.ResourcesCompat;
@@ -7,7 +7,10 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-public class Item extends LinearLayout implements Updatable{
+import rx.liip.ch.rxdemo.R;
+import rx.liip.ch.rxdemo.Updatable;
+
+public class Item extends LinearLayout implements Updatable {
 
     public static final int PADDING = 10;
     private final Activity activity;

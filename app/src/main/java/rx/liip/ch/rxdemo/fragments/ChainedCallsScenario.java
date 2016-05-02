@@ -1,13 +1,11 @@
 package rx.liip.ch.rxdemo.fragments;
 
 import rx.Observable;
-import rx.Subscriber;
 import rx.functions.Action1;
 import rx.functions.Func1;
-import rx.liip.ch.rxdemo.Item;
-import rx.liip.ch.rxdemo.Model;
+import rx.liip.ch.rxdemo.view.Item;
 import rx.liip.ch.rxdemo.RxOperations;
-import rx.liip.ch.rxdemo.Scenario;
+import rx.liip.ch.rxdemo.view.Scenario;
 import rx.liip.ch.rxdemo.ServerCalls;
 import rx.liip.ch.rxdemo.Updatable;
 

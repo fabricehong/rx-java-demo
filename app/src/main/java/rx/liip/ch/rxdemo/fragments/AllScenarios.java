@@ -8,9 +8,9 @@ import rx.functions.Action1;
 import rx.functions.Func1;
 import rx.functions.Func2;
 import rx.functions.FuncN;
-import rx.liip.ch.rxdemo.Item;
+import rx.liip.ch.rxdemo.view.Item;
 import rx.liip.ch.rxdemo.RxOperations;
-import rx.liip.ch.rxdemo.Scenario;
+import rx.liip.ch.rxdemo.view.Scenario;
 import rx.liip.ch.rxdemo.ServerCalls;
 import rx.liip.ch.rxdemo.Updatable;
 

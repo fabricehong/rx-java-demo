@@ -1,4 +1,4 @@
-package rx.liip.ch.rxdemo;
+package rx.liip.ch.rxdemo.view;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -15,6 +15,7 @@ import android.view.View;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import rx.liip.ch.rxdemo.R;
 import rx.liip.ch.rxdemo.fragments.AllScenarios;
 import rx.liip.ch.rxdemo.fragments.ChainedCallsScenario;
 import rx.liip.ch.rxdemo.fragments.ModelUpdateScenario;

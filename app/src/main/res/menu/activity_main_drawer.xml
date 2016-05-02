@@ -3,6 +3,10 @@
 
     <group android:checkableBehavior="single">
         <item
+            android:id="@+id/free_scenario"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Live scenario" />
+        <item
             android:id="@+id/model_update_scenario"
             android:icon="@drawable/ic_menu_camera"
             android:title="Model update scenario" />
@@ -18,10 +22,6 @@
             android:id="@+id/all_scenarios"
             android:icon="@drawable/ic_menu_gallery"
             android:title="All scenarios" />
-        <item
-            android:id="@+id/free_scenario"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Free scenario" />
     </group>
 
 </menu>

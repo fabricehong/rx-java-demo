@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/model_update_scenario"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Model update scenario" />
+        <item
+            android:id="@+id/parallel_calls_scenario"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="Parallel calls scenario" />
+        <item
+            android:id="@+id/chained_calls_scenario"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="Chained calls scenario" />
+        <item
+            android:id="@+id/all_scenarios"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="All scenarios" />
+        <item
+            android:id="@+id/free_scenario"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Free scenario" />
+    </group>
+
+</menu>

@@ -13,7 +13,7 @@ import rx.liip.ch.rxdemo.Updatable;
 public class Item extends LinearLayout implements Updatable {
 
     public static final int PADDING = 10;
-    public static final int SIZE = 80;
+    public static final int SIZE = 70;
     private final Activity activity;
     private TextView labelView;
 

@@ -7,19 +7,14 @@ import rx.schedulers.Schedulers;
 
 public class RxOperations {
 
-    private static final Observable.Transformer schedulerTransformer = new Observable.Transformer<Object, Object>() {
-        @Override
-        public Observable<Object> call(Observable<Object> observable) {
-            return observable.observeOn(AndroidSchedulers.mainThread())
-                    .subscribeOn(Schedulers.io());
-        }
-    };
-
     public static <T> Observable.Transformer<T, T> applySchedulers() {
-        return (Observable.Transformer<T, T>)schedulerTransformer;
-    }
-
-    public static void run(Observable observable) {
-        ((ConnectableObservable)observable).connect();
+        return new Observable.Transformer<T, T>() {
+            @Override
+            public Observable<T> call(Observable<T> observable) {
+                return observable
+                        .observeOn(AndroidSchedulers.mainThread())
+                        .subscribeOn(Schedulers.io());
+            }
+        };
     }
 }

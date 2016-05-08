@@ -16,17 +16,17 @@ import rx.liip.ch.rxdemo.utils.Function;
 public class ServerCalls {
     static Random rand = new Random();
 
-    public static Observable<Updatable> createSimulatedServerCall(final Updatable user) {
-        return createSimulatedServerCall(user, null);
+    public static Observable<Updatable> createSimulatedServerCall(final Updatable state) {
+        return createSimulatedServerCall(state, null);
     }
 
-    public static Observable<Updatable> createSimulatedServerCall(final Updatable user, final String label) {
-        user.start();
+    public static Observable<Updatable> createSimulatedServerCall(final Updatable state, final String label) {
+        state.start();
         return createSimulatedServerCall().flatMap(new Func1<Long, Observable<Updatable>>() {
             @Override
             public Observable<Updatable> call(Long aLong) {
-                user.setLabel(label);
-                return Observable.just(user);
+                state.setLabel(label);
+                return Observable.just(state);
             }
         });
     }

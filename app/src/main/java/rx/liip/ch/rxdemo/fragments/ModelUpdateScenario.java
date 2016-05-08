@@ -3,6 +3,7 @@ package rx.liip.ch.rxdemo.fragments;
 import rx.Observable;
 import rx.Subscriber;
 import rx.functions.Action0;
+import rx.functions.Action1;
 import rx.liip.ch.rxdemo.view.Item;
 import rx.liip.ch.rxdemo.RxOperations;
 import rx.liip.ch.rxdemo.view.Scenario;
@@ -34,11 +35,17 @@ public class ModelUpdateScenario extends Scenario {
                     @Override
                     public void call() {
                         modelState.complete();
+                        System.out.println("Model : complete");
+                    }
+                })
+                .doOnNext(new Action1<Updatable>() {
+                    @Override
+                    public void call(Updatable updatable) {
+                        System.out.println("Model : onNext");
                     }
                 });
 
         observerForView
-                .compose(RxOperations.applySchedulers())
                 .subscribe(new Subscriber<Object>() {
                        @Override
                        public void onCompleted() {

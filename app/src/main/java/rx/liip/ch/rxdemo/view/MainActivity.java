@@ -18,7 +18,6 @@ import butterknife.ButterKnife;
 import rx.liip.ch.rxdemo.R;
 import rx.liip.ch.rxdemo.fragments.AllScenarios;
 import rx.liip.ch.rxdemo.fragments.ChainedCallsScenario;
-import rx.liip.ch.rxdemo.fragments.LiveScenario;
 import rx.liip.ch.rxdemo.fragments.ModelUpdateScenario;
 import rx.liip.ch.rxdemo.fragments.ParallelCallsScenario;
 
@@ -47,7 +46,7 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        setScenario(new LiveScenario());
+        setScenario(new ModelUpdateScenario());
 
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -114,8 +113,6 @@ public class MainActivity extends AppCompatActivity
             setScenario(new ChainedCallsScenario());
         } else if (id == R.id.all_scenarios) {
             setScenario(new AllScenarios());
-        } else if (id == R.id.free_scenario) {
-            setScenario(new LiveScenario());
         } else {
             throw new RuntimeException("Unknown case");
         }
